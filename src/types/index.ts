@@ -35,6 +35,11 @@ export interface Course {
   classType: ('one-to-one' | 'group')[];
   icon: string;          // Lucide icon name
   color: string;         // Tailwind bg color class
+  learningOutcomes?: string[];
+  targetAudience?: string[];
+  teachingApproach?: string;
+  prerequisites?: string;
+  duration?: string;
 }
 
 // ─── Teachers ────────────────────────────────────────────────────────────────
