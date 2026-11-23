@@ -44,6 +44,26 @@ export const teachers: Teacher[] = [
     bio: 'Specialist in early childhood Quran learning. Uses engaging, step-by-step interactive methods to help beginners build strong foundations.',
     experience: 5,
   },
+  {
+    id: 't-5',
+    name: 'Qari Bilal Hasan',
+    gender: 'male',
+    qualifications: ['Wifaq-ul-Madaris Al-Arabia Certified', 'Gold Medalist in Qira\'at', 'Hafiz'],
+    languages: ['English', 'Urdu', 'Pashto'],
+    courses: ['hifz', 'tajweed', 'noorani-qaida'],
+    bio: 'Friendly and motivational Hifz mentor who has helped over 40 international students complete full and partial Quran memorization.',
+    experience: 9,
+  },
+  {
+    id: 't-6',
+    name: 'Ustadha Aisha Farooq',
+    gender: 'female',
+    qualifications: ['Ijazah in Tajweed & Tarteel', 'MA in Arabic Language', 'Alimah Graduate'],
+    languages: ['English', 'Arabic', 'Urdu'],
+    courses: ['tajweed', 'quran-translation', 'islamic-studies'],
+    bio: 'Specialist in teaching sisters and young Muslim women. Focuses on word-by-word Quran translation and Tajweed beauty.',
+    experience: 7,
+  },
 ];
 
 export function getFeaturedTeachers(count = 4): Teacher[] {
