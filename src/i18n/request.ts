@@ -15,12 +15,22 @@ export const defaultLocale: Locale = 'en';
 export const rtlLocales: Locale[] = ['ur', 'ar'];
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  // requestLocale is the locale extracted from the URL segment (e.g. "en")
-  const locale = (await requestLocale) as Locale;
+  // requestLocale is the locale extracted from the URL segment (e.g. "en").
+  // It can be undefined if the middleware hasn't matched yet, so we
+  // ALWAYS validate it and fall back to the default locale.
+  const requested = await requestLocale;
+
+  // Type guard: only accept known locales, otherwise use 'en'
+  const locale: Locale =
+    requested && (locales as readonly string[]).includes(requested)
+      ? (requested as Locale)
+      : defaultLocale;
 
   return {
     locale,
-    // Dynamically import the correct translation JSON file
+    // Dynamically import the correct translation JSON file.
+    // Because `locale` is now guaranteed to be 'en' | 'ur' | 'ar',
+    // the import will always find the right file.
     messages: (await import(`../messages/${locale}.json`)).default,
   };
 });
