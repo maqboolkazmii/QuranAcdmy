@@ -17,7 +17,8 @@ import { usePathname } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { Menu, X, BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+// LanguageSwitcher temporarily hidden — English only MVP
+// import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -133,11 +134,7 @@ export default function Navbar() {
 
         {/* ── Desktop Right Actions ── */}
         <div className="hidden md:flex items-center gap-4">
-          {/*
-            LanguageSwitcher is YOUR FIRST CODING EXERCISE.
-            For now we render a placeholder. See the task at the bottom of this file.
-          */}
-          <LanguageSwitcher />
+          {/* LanguageSwitcher — will be enabled in Phase 4 (multilingual) */}
 
           <Link href={`/${locale}/book-trial`} className="btn-primary text-sm py-2">
             {t('freeTrial')}
@@ -146,7 +143,7 @@ export default function Navbar() {
 
         {/* ── Mobile Hamburger Button ── */}
         <div className="flex md:hidden items-center gap-3">
-          <LanguageSwitcher compact />
+          {/* LanguageSwitcher compact — enabled in Phase 4 */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 rounded-lg text-brand-charcoal hover:bg-gray-100 transition-colors"
