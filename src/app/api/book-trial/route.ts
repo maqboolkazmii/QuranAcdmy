@@ -4,6 +4,7 @@
 import { NextResponse } from 'next/server';
 import type { TrialBookingFormData } from '@/types';
 import { courses } from '@/lib/data/courses';
+import { insertTrialBooking } from '@/lib/supabase';
 
 // Basic email validation regex
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,39 +76,10 @@ export async function POST(request: Request) {
     };
 
     // ─── 3. Persistence (Supabase or Local Fallback) ─────────────────────────
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const dbResult = await insertTrialBooking(bookingRecord);
 
-    const isSupabaseConfigured =
-      supabaseUrl &&
-      !supabaseUrl.includes('your-project-ref') &&
-      supabaseKey &&
-      !supabaseKey.includes('your-service-role-key');
-
-    if (isSupabaseConfigured) {
-      try {
-        // Direct REST call to Supabase without needing extra heavy SDK
-        const response = await fetch(`${supabaseUrl}/rest/v1/trial_bookings`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            apikey: supabaseKey,
-            Authorization: `Bearer ${supabaseKey}`,
-            Prefer: 'return=minimal',
-          },
-          body: JSON.stringify(bookingRecord),
-        });
-
-        if (!response.ok) {
-          console.warn('Supabase insert failed, logging locally:', await response.text());
-        }
-      } catch (dbErr) {
-        console.error('Supabase connection error:', dbErr);
-      }
-    } else {
-      // In development when Supabase credentials are not yet entered,
-      // log clearly to console so the submission succeeds without blocking!
-      console.log('📌 [NEW TRIAL BOOKING RECEIVED]:', bookingRecord);
+    if (dbResult.error) {
+      console.warn('Database insert warning, but proceeding with confirmation:', dbResult.error);
     }
 
     return NextResponse.json({
