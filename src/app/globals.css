@@ -1,0 +1,116 @@
+/* src/app/globals.css
+   Global styles and CSS custom properties for AyatBridge Academy.
+   Tailwind's directives inject its base, component and utility layers here.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ──────────────────────────────────────────────── */
+:root {
+  --color-primary:       #0D5C3A;
+  --color-primary-light: #1A7A4E;
+  --color-gold:          #B8963E;
+  --color-ivory:         #FAF7F0;
+  --color-charcoal:      #1C2526;
+}
+
+/* ─── Base Typography ─────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-brand-charcoal bg-white;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  /* RTL languages use the Arabic / Urdu font stacks */
+  [dir='rtl'] body,
+  [lang='ar'] body {
+    font-family: var(--font-noto-naskh), serif;
+  }
+
+  [lang='ur'] body {
+    font-family: var(--font-noto-nastaliq), serif;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3 {
+    font-family: var(--font-noto-naskh), serif;
+  }
+}
+
+/* ─── Component Layer: Reusable Utility Classes ───────────────────────────── */
+@layer components {
+
+  /* Container with brand-standard max width and padding */
+  .container-brand {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section vertical padding */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-primary text-white font-semibold
+           px-6 py-3 rounded-xl
+           hover:bg-brand-primary-light
+           focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Gold accent button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-gold text-white font-semibold
+           px-6 py-3 rounded-xl
+           hover:bg-brand-gold-light
+           focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2
+           transition-all duration-200;
+  }
+
+  /* Ghost / outline button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           border-2 border-brand-primary text-brand-primary font-semibold
+           px-6 py-3 rounded-xl
+           hover:bg-brand-primary hover:text-white
+           focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2
+           transition-all duration-200;
+  }
+
+  /* Standard card */
+  .card {
+    @apply bg-white rounded-2xl shadow-brand border border-gray-100
+           overflow-hidden transition-shadow duration-300
+           hover:shadow-brand-lg;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-serif font-bold text-brand-charcoal;
+  }
+
+  /* Muted section sub-heading */
+  .section-subheading {
+    @apply text-lg text-gray-600 mt-3 max-w-2xl;
+  }
+
+  /* Gold decorative underline below headings */
+  .heading-underline {
+    @apply w-16 h-1 bg-brand-gold rounded-full mt-4;
+  }
+}

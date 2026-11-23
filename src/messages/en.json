@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "courses": "Courses",
+    "teachers": "Our Teachers",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "freeTrial": "Book Free Trial"
+  },
+  "hero": {
+    "badge": "Trusted by families across the USA, UK & Europe",
+    "headline": "Learn the Quran with",
+    "headlineAccent": "Qualified Teachers",
+    "subheadline": "Professional one-to-one and group Quran classes for children and adults. Certified male and female teachers. Flexible schedules. All time zones.",
+    "ctaPrimary": "Book Your Free Trial",
+    "ctaSecondary": "Explore Courses",
+    "stats": {
+      "students": "500+ Students",
+      "countries": "15+ Countries",
+      "teachers": "30+ Teachers",
+      "experience": "5+ Years"
+    }
+  },
+  "courses": {
+    "heading": "Our Quran Courses",
+    "subheading": "Structured learning paths for every level, age and goal.",
+    "learnMore": "Learn More",
+    "bookTrial": "Book Free Trial",
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "allLevels": "All Levels"
+    }
+  },
+  "whyUs": {
+    "heading": "Why Choose AyatBridge Academy?",
+    "subheading": "We combine qualified scholarship with modern online learning."
+  },
+  "teachers": {
+    "heading": "Meet Our Teachers",
+    "subheading": "Qualified, experienced and passionate educators.",
+    "male": "Male Teacher",
+    "female": "Female Teacher",
+    "viewProfile": "View Profile"
+  },
+  "pricing": {
+    "heading": "Simple, Transparent Pricing",
+    "subheading": "Choose the plan that fits your family.",
+    "perMonth": "/ month",
+    "perClass": "/ class",
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "inquire": "Inquire Now"
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Everything you need to know before booking."
+  },
+  "cta": {
+    "heading": "Ready to Begin Your Quran Journey?",
+    "subheading": "Join hundreds of students learning the Quran with our qualified teachers. Book your free trial class today — no commitment required.",
+    "button": "Book Free Trial Now",
+    "secondary": "Contact Us First"
+  },
+  "footer": {
+    "tagline": "Connecting Hearts with the Holy Quran.",
+    "quickLinks": "Quick Links",
+    "courses": "Courses",
+    "legal": "Legal",
+    "contact": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "refundPolicy": "Refund Policy",
+    "allRightsReserved": "All rights reserved.",
+    "madeWith": "Built with"
+  },
+  "booking": {
+    "heading": "Book Your Free Trial Class",
+    "subheading": "Fill in the form below and we will confirm your free trial within 24 hours.",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "whatsapp": "WhatsApp Number",
+      "country": "Country",
+      "ageGroup": "Student Age Group",
+      "course": "Select Course",
+      "teacherGender": "Preferred Teacher Gender",
+      "classType": "Class Type",
+      "timezone": "Your Time Zone",
+      "days": "Preferred Days",
+      "time": "Preferred Time",
+      "message": "Additional Notes"
+    },
+    "submit": "Submit Booking Request",
+    "submitting": "Submitting…",
+    "success": "Your booking request has been received! We will contact you within 24 hours.",
+    "error": "Something went wrong. Please try again or contact us directly."
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "subheading": "We would love to hear from you.",
+    "email": "Email Us",
+    "whatsapp": "WhatsApp",
+    "sendMessage": "Send a Message"
+  },
+  "meta": {
+    "home": {
+      "title": "AyatBridge Academy — Online Quran Classes for Kids & Adults",
+      "description": "Learn Quran online with qualified male and female teachers. One-to-one and group Quran classes for children and adults in the USA, UK and Europe."
+    }
+  }
+}
