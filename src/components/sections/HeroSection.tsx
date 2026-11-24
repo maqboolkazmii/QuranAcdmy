@@ -2,7 +2,6 @@
 // src/components/sections/HeroSection.tsx
 // Two-column responsive hero featuring real online class photography and trust cues.
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
@@ -38,13 +37,6 @@ export default function HeroSection() {
   const locale = useLocale();
   const isRTL = getDirection(locale) === 'rtl';
 
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 80);
-    return () => clearTimeout(timer);
-  }, []);
-
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
@@ -65,12 +57,7 @@ export default function HeroSection() {
       />
 
       <div className="container-brand relative z-10 pt-28 pb-32">
-        <div
-          className={cn(
-            'transition-all duration-700 ease-out',
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          )}
-        >
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
             {/* ── Left Column: Value Proposition & CTAs (Cols 1-7) ── */}
@@ -178,9 +165,10 @@ export default function HeroSection() {
                 <Image
                   src="/images/hero-quran-class.png"
                   alt="Online Quran class on Google Meet with teacher and young student"
-                  width={680}
-                  height={520}
+                  width={1024}
+                  height={576}
                   priority
+                  unoptimized
                   className="w-full h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
                 />
 
