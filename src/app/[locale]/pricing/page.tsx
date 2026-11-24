@@ -41,20 +41,20 @@ export default async function PricingPage({
           </div>
 
           {/* Pricing Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch pt-4">
             {pricingPlans.map((plan) => (
               <div
                 key={plan.id}
                 className={cn(
-                  'card flex flex-col justify-between p-8 relative transition-all duration-300',
+                  'card !overflow-visible flex flex-col justify-between p-8 relative transition-all duration-300',
                   plan.popular
                     ? 'border-2 border-brand-gold shadow-brand-lg ring-2 ring-brand-gold/20 -translate-y-2'
                     : 'border border-gray-100 hover:border-brand-primary/20'
                 )}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
-                    Most Popular
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full shadow-md z-20 whitespace-nowrap">
+                    ⭐ Most Popular
                   </div>
                 )}
 
