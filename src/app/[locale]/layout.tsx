@@ -9,6 +9,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
 import { getDirection } from '@/lib/utils';
+import { EducationalOrganizationJsonLd } from '@/components/seo/JsonLd';
 import '@/app/globals.css';
 
 // ─── Font Loading ─────────────────────────────────────────────────────────────
@@ -110,6 +111,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
       className={`${inter.variable} ${playfair.variable} ${notoNaskh.variable} ${notoNastaliq.variable}`}
     >
       <body className="bg-white text-brand-charcoal antialiased">
+        <EducationalOrganizationJsonLd />
         {/*
           NextIntlClientProvider makes translations available to Client Components.
           Server Components can call useTranslations() directly without this.
