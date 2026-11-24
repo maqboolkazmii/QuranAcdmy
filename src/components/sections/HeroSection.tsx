@@ -51,30 +51,30 @@ export default function HeroSection() {
           priority
           unoptimized
           sizes="100vw"
-          className="object-cover object-center lg:object-right scale-105"
+          className="object-cover object-[80%_center] lg:object-right scale-105"
         />
       </div>
 
-      {/* ── 2. Cinematic Gradient Overlay (Dark on text side, clear on teacher side) ── */}
-      {/* Base dark tint across the whole image for readability */}
-      <div className="absolute inset-0 bg-brand-primary-dark/60 -z-10" />
+      {/* ── 2. Cinematic Gradient Overlay ── */}
+      {/* Base dark tint across the image for text clarity */}
+      <div className="absolute inset-0 bg-brand-primary-dark/65 -z-10" />
 
-      {/* Directional gradient: Deep emerald on the start/text side, fading to transparent */}
+      {/* Directional gradient: Deep solid emerald on the left side, fading smoothly towards the teacher */}
       <div
         className={cn(
           'absolute inset-0 -z-10',
           isRTL
             ? 'bg-gradient-to-l from-brand-primary-dark/95 via-brand-primary-dark/85 to-transparent'
-            : 'bg-gradient-to-r from-brand-primary-dark/95 via-brand-primary-dark/85 to-transparent'
+            : 'bg-gradient-to-r from-brand-primary-dark/95 via-brand-primary-dark/80 to-transparent'
         )}
       />
 
       {/* Subtle top & bottom shadow gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-brand-primary-dark/80 -z-10" />
 
-      {/* ── 3. Foreground Content ── */}
-      <div className="container-brand relative z-10 pt-32 pb-28">
-        <div className="max-w-2xl lg:max-w-3xl space-y-7 text-center lg:text-start">
+      {/* ── 3. Foreground Content (Strictly aligned with Navbar Logo) ── */}
+      <div className="container-brand w-full relative z-10 pt-32 pb-28">
+        <div className="max-w-xl lg:max-w-[34rem] xl:max-w-[38rem] space-y-6 text-start">
 
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md border border-brand-gold/40 rounded-full px-4 py-1.5 shadow-lg">
@@ -85,7 +85,7 @@ export default function HeroSection() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.18] drop-shadow-md">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-[1.18] drop-shadow-md text-start">
             {t('headline')}{' '}
             <span className="text-brand-gold relative inline-block">
               {t('headlineAccent')}
@@ -106,18 +106,18 @@ export default function HeroSection() {
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-base sm:text-lg text-white/90 leading-relaxed drop-shadow-sm max-w-2xl mx-auto lg:mx-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed drop-shadow-sm text-start">
             {t('subheadline')}
           </p>
 
           {/* CTA Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-start gap-4 pt-1">
             <Link
               href={`/${locale}/book-trial`}
               className={cn(
                 'inline-flex items-center gap-2',
                 'bg-brand-gold text-white font-bold',
-                'px-8 py-4 rounded-xl text-base sm:text-lg',
+                'px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl text-sm sm:text-base',
                 'hover:bg-brand-gold-light transition-all duration-200',
                 'shadow-gold hover:shadow-2xl hover:-translate-y-0.5',
                 'focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2'
@@ -132,7 +132,7 @@ export default function HeroSection() {
               className={cn(
                 'inline-flex items-center gap-2',
                 'bg-black/30 backdrop-blur-md border-2 border-white/40 text-white font-semibold',
-                'px-7 py-4 rounded-xl text-base',
+                'px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl text-sm sm:text-base',
                 'hover:bg-white/20 hover:border-white/70 transition-all duration-200',
                 'focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2'
               )}
@@ -142,7 +142,7 @@ export default function HeroSection() {
           </div>
 
           {/* Trust Value Checklist */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-white/90 pt-1">
+          <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-white/90 pt-1">
             <span className="flex items-center gap-1.5 drop-shadow">
               <CheckCircle2 className="w-4 h-4 text-brand-gold flex-shrink-0" /> Free 30-Minute Trial
             </span>
@@ -155,7 +155,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats Bar */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-4">
+          <div className="flex flex-wrap items-center justify-start gap-2 pt-2">
             <StatBadge icon={<Users className="h-4 w-4" />} value={t('stats.students')} />
             <StatBadge icon={<Globe2 className="h-4 w-4" />} value={t('stats.countries')} />
             <StatBadge icon={<GraduationCap className="h-4 w-4" />} value={t('stats.teachers')} />
