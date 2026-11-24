@@ -60,13 +60,17 @@ export interface Teacher {
 
 // ─── Pricing ─────────────────────────────────────────────────────────────────
 
+export type CurrencyCode = 'GBP' | 'USD' | 'EUR' | 'AUD';
+
 export interface PricingPlan {
   id: string;
   name: string;
   description: string;
   classesPerWeek: number;
-  price: number | null;  // null = inquiry-based
-  currency: string;      // ISO 4217 e.g. 'GBP' | 'USD' | 'EUR'
+  classesPerMonth: number;
+  durationMinutes: number;
+  prices: Record<CurrencyCode, number>;
+  category: 'individual' | 'family';
   classType: 'one-to-one' | 'group';
   features: string[];
   popular: boolean;
